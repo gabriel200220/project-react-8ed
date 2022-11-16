@@ -5,9 +5,9 @@ const UserTable = (props: any) => {
 		<table>
 			<thead>
 				<th>
-					<tr>Name</tr>
-					<tr>Username</tr>
-					<tr>Actions</tr>
+					<tr>Detalhamento</tr>
+					<tr>Descrição</tr>
+					<tr>Ações</tr>
 				</th>
 			</thead>
 			<tbody>
@@ -23,13 +23,13 @@ const UserTable = (props: any) => {
 									}}
 									className='button muted-button'
 								>
-									Edit
+									Editar
 								</button>
 								<button
 									onClick={() => props.deleteUser(user.id)}
 									className='button muted-button'
 								>
-									Delete
+									Deletar
 								</button>
 							</td>
 						</tr>

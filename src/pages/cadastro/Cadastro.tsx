@@ -27,7 +27,7 @@ function Register() {
 
 			localStorage.setItem('userList', JSON.stringify(userList))
 
-			navigate('/Entrar')
+			navigate('/')
 		}
 	}
 
