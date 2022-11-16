@@ -19,6 +19,9 @@ function Entrar() {
 					user.email === e.target.elements.email.value &&
 					user.password === e.target.elements.password.value
 			)
+			if (validateLogin(e)) {
+				navigate('/home')
+			}
 
 			const loggedUser: LoggedUser = {
 				name: foundUser?.name!,
@@ -27,8 +30,6 @@ function Entrar() {
 			}
 
 			localStorage.setItem('loggedUser', JSON.stringify(loggedUser))
-
-			navigate('/Lista')
 		}
 	}
 
@@ -53,9 +54,8 @@ function Entrar() {
 
 			return false
 		}
-
-		return true
 	}
+
 	return (
 		<>
 			<Container sx={Card}>
@@ -65,7 +65,7 @@ function Entrar() {
 					</header>
 					<TextField type='text' label='E-mail' />
 					<TextField type='password' label='Senha' />
-					<Button>Entrar</Button>
+					<Button> Entrar</Button>
 					<footer>
 						<p>
 							Não possui uma conta?{' '}

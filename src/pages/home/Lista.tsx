@@ -5,11 +5,7 @@ import UserTable from './tables/UserTable'
 
 const App = () => {
 	// Data
-	const userData = [
-		{ id: 1, name: 'John', username: 'floppy' },
-		{ id: 2, name: 'Fredy', username: 'mercury' },
-		{ id: 3, name: 'Willy', username: 'donkel' }
-	]
+	const userData = [{ id: 1, name: 'Exemplo', username: 'Exemplo' }]
 
 	const initialFormState = { id: null, name: '', username: '' }
 
@@ -46,12 +42,11 @@ const App = () => {
 
 	return (
 		<div className='container'>
-			<h1>CRUD App with Hooks</h1>
+			<h1>Bem vindo a lista de recados</h1>
 			<div className='flex-row'>
 				<div className='flex-large'>
 					{editing ? (
 						<Fragment>
-							<h2>Edit user</h2>
 							<EditUserForm
 								editing={editing}
 								setEditing={setEditing}
@@ -61,13 +56,11 @@ const App = () => {
 						</Fragment>
 					) : (
 						<Fragment>
-							<h2>Add user</h2>
 							<AddUserForm addUser={addUser} />
 						</Fragment>
 					)}
 				</div>
 				<div className='flex-large'>
-					<h2>View users</h2>
 					<UserTable
 						users={users}
 						editRow={editRow}
