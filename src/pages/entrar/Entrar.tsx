@@ -20,7 +20,7 @@ function Entrar() {
 					user.password === e.target.elements.password.value
 			)
 			if (validateLogin(e)) {
-				navigate('/home')
+				navigate('/lista')
 			}
 
 			const loggedUser: LoggedUser = {
