@@ -1,8 +1,8 @@
 import { Container, Button, Paper, TextField } from '@mui/material'
+import nodeTest from 'node:test'
 import { FormEventHandler, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { User } from '../../shared/interfaces/Interfaces'
-
 import { Card, paperStyled } from '../../shared/styles/Styles'
 
 function Register() {
@@ -29,6 +29,27 @@ function Register() {
 
 			navigate('/')
 		}
+	}
+	function saveUser(e: any) {
+		const user: User = {
+			email: e.target.elements.email.value,
+			password: e.target.elements.password.value,
+			notes: [],
+			name: ''
+		}
+
+		userList.push(user)
+
+		SaveUserList('user', userList)
+	}
+
+	function SaveUserList(key: string, value: User[]) {
+		localStorage.setItem(key, JSON.stringify(value))
+
+		redirectUser()
+	}
+	function redirectUser() {
+		navigate('/')
 	}
 
 	const validateRegister = (e: any) => {

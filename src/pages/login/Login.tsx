@@ -3,7 +3,7 @@ import { Container, Button, Paper, TextField } from '@mui/material'
 import { Card, paperStyled } from '../../shared/styles/Styles'
 import { LoggedUser, User } from '../../shared/interfaces/Interfaces'
 
-function Entrar() {
+function Login() {
 	const userList = JSON.parse(
 		localStorage.getItem('userList') || '[]'
 	) as User[]
@@ -19,9 +19,6 @@ function Entrar() {
 					user.email === e.target.elements.email.value &&
 					user.password === e.target.elements.password.value
 			)
-			if (validateLogin(e)) {
-				navigate('/lista')
-			}
 
 			const loggedUser: LoggedUser = {
 				name: foundUser?.name!,
@@ -31,6 +28,11 @@ function Entrar() {
 
 			localStorage.setItem('loggedUser', JSON.stringify(loggedUser))
 		}
+		openUserList()
+	}
+
+	function openUserList() {
+		navigate('/Home')
 	}
 
 	const validateLogin = (e: any) => {
@@ -59,23 +61,25 @@ function Entrar() {
 	return (
 		<>
 			<Container sx={Card}>
-				<Paper elevation={4} sx={paperStyled}>
-					<header>
-						<h2>Pagina de Login</h2>
-					</header>
-					<TextField type='text' label='E-mail' />
-					<TextField type='password' label='Senha' />
-					<Button> Entrar</Button>
-					<footer>
-						<p>
-							Não possui uma conta?{' '}
-							<Link to={'/Cadastro'}>Crie uma.</Link>
-						</p>
-					</footer>
-				</Paper>
+				<form onSubmit={onSubmit}>
+					<Paper elevation={4} sx={paperStyled}>
+						<header>
+							<h2>Pagina de Login</h2>
+						</header>
+						<TextField type='text' label='E-mail' />
+						<TextField type='password' label='Senha' />
+						<Button type='submit'>Entrar</Button>
+						<footer>
+							<p>
+								Não possui uma conta?{' '}
+								<Link to={'/Cadastro'}>Crie uma.</Link>
+							</p>
+						</footer>
+					</Paper>
+				</form>
 			</Container>
 		</>
 	)
 }
 
-export default Entrar
+export default Login

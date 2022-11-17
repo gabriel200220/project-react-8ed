@@ -1,15 +1,15 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Cadastro from '../pages/cadastro/Cadastro'
-import Entrar from '../pages/entrar/Entrar'
-import Home from '../pages/home/Lista'
+import Login from '../pages/login/Login'
+import Home from '../pages/home/Home'
 
 const AppRoutes: React.FC = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='/' element={<Entrar />}></Route>
-				<Route path='/cadastro' element={<Cadastro />}></Route>
-				<Route path='/lista' element={<Home />}></Route>
+				<Route path='/' element={<Login />}></Route>
+				<Route path='/Cadastro' element={<Cadastro />}></Route>
+				<Route path='/Home' element={<Home />}></Route>
 			</Routes>
 		</BrowserRouter>
 	)
