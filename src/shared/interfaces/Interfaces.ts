@@ -3,21 +3,21 @@ interface User {
 	name: string
 	email: string
 	password: string
-	notes: Array<Notes>
+	notes: Array<UserData>
 }
 
 // Login
 interface LoggedUser {
 	name: string
 	email: string
-	notes: Array<Notes>
+	notes: Array<UserData>
 }
 
 // Home
-interface Notes {
-	title: string
-	description: string
-	id: string
+interface UserData {
+	name: string
+	username: string
+	id: number
 }
 
-export type { User, Notes, LoggedUser }
+export type { User, UserData, LoggedUser }
