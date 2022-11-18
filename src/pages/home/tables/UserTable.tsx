@@ -26,6 +26,12 @@ const UserTable = (props: any) => {
 								>
 									Editar
 								</button>
+								<button
+									onClick={() => props.deleteUser(user.id)}
+									className='button muted-button'
+								>
+									Delete
+								</button>
 								<Button
 									// onClick={handleExit}
 									variant='contained'
