@@ -1,3 +1,4 @@
+import { Button } from '@mui/material'
 import React from 'react'
 
 const UserTable = (props: any) => {
@@ -25,18 +26,13 @@ const UserTable = (props: any) => {
 								>
 									Editar
 								</button>
-								<button
-									onClick={() => props.deleteUser(user.id)}
-									className='button muted-button'
+								<Button
+									// onClick={handleExit}
+									variant='contained'
+									color='error'
 								>
-									Deletar
-								</button>
-								<button
-									onClick={() => props.deleteUser(user.id)}
-									className='button muted-button'
-								>
-									Sair
-								</button>
+									Logout
+								</Button>
 							</td>
 						</tr>
 					))
