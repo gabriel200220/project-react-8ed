@@ -4,11 +4,11 @@ const UserTable = (props: any) => {
 	return (
 		<table>
 			<thead>
-				<th>
-					<tr>Detalhamento</tr>
-					<tr>Descrição</tr>
-					<tr>Ações</tr>
-				</th>
+				<tr>
+					<td>Detalhamento</td>
+					<td>Descrição</td>
+					<td>Ações</td>
+				</tr>
 			</thead>
 			<tbody>
 				{props.users.length > 0 ? (
@@ -30,6 +30,12 @@ const UserTable = (props: any) => {
 									className='button muted-button'
 								>
 									Deletar
+								</button>
+								<button
+									onClick={() => props.deleteUser(user.id)}
+									className='button muted-button'
+								>
+									Sair
 								</button>
 							</td>
 						</tr>

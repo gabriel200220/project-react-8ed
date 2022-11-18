@@ -36,6 +36,7 @@ function Login() {
 	}
 
 	const validateLogin = (e: any) => {
+		console.log(e.target.elements)
 		const foundUser = userList.find(
 			(user) =>
 				user.email === e.target.elements.email.value &&
@@ -56,18 +57,23 @@ function Login() {
 
 			return false
 		}
+		return true
 	}
 
 	return (
 		<>
 			<Container sx={Card}>
-				<form onSubmit={onSubmit}>
-					<Paper elevation={4} sx={paperStyled}>
-						<header>
-							<h2>Pagina de Login</h2>
-						</header>
-						<TextField type='text' label='E-mail' />
-						<TextField type='password' label='Senha' />
+				<Paper elevation={4} sx={paperStyled}>
+					<header>
+						<h2>Pagina de Login</h2>
+					</header>
+					<form onSubmit={onSubmit}>
+						<TextField name='email' type='text' label='E-mail' />
+						<TextField
+							name='password'
+							type='password'
+							label='Senha'
+						/>
 						<Button type='submit'>Entrar</Button>
 						<footer>
 							<p>
@@ -75,8 +81,8 @@ function Login() {
 								<Link to={'/Cadastro'}>Crie uma.</Link>
 							</p>
 						</footer>
-					</Paper>
-				</form>
+					</form>
+				</Paper>
 			</Container>
 		</>
 	)

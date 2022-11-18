@@ -4,6 +4,7 @@ import { FormEventHandler, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { User } from '../../shared/interfaces/Interfaces'
 import { Card, paperStyled } from '../../shared/styles/Styles'
+import UserTable from '../home/tables/UserTable'
 
 function Register() {
 	const userList = JSON.parse(
@@ -16,6 +17,7 @@ function Register() {
 		e.preventDefault()
 
 		if (validateRegister(e)) {
+			console.log(e.target.elements)
 			const user: User = {
 				name: e.target.elements.name.value,
 				email: e.target.elements.email.value,
@@ -81,6 +83,19 @@ function Register() {
 			alert('Senhas não coincidem.')
 
 			return false
+		}
+
+		function salvarUsuario() {
+			const usuario = {
+				email: email.value,
+				senha: senha.value,
+				recados: []
+			}
+
+			// lista.adicionar(usuario)
+			UserTable.push(usuario)
+
+			salvarListaUsuariosNoCache('usuarios', listaDeUsuarios)
 		}
 
 		return true
