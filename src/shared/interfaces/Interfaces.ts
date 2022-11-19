@@ -6,14 +6,12 @@ interface User {
 	notes: Array<UserData>
 }
 
-// Login
 interface LoggedUser {
 	name: string
 	email: string
 	notes: Array<UserData>
 }
 
-// Home
 interface UserData {
 	name: string
 	username: string

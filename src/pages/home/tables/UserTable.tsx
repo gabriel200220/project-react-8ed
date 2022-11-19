@@ -30,21 +30,14 @@ const UserTable = (props: any) => {
 									onClick={() => props.deleteUser(user.id)}
 									className='button muted-button'
 								>
-									Delete
+									Deletar
 								</button>
-								<Button
-									// onClick={handleExit}
-									variant='contained'
-									color='error'
-								>
-									Logout
-								</Button>
 							</td>
 						</tr>
 					))
 				) : (
 					<tr>
-						<td colSpan={3}>No users</td>
+						<td colSpan={3}>Sem Recados</td>
 					</tr>
 				)}
 			</tbody>

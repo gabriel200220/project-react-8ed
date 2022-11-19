@@ -85,19 +85,6 @@ function Register() {
 			return false
 		}
 
-		function salvarUsuario() {
-			const usuario = {
-				email: email.value,
-				senha: senha.value,
-				recados: []
-			}
-
-			// lista.adicionar(usuario)
-			UserTable.push(usuario)
-
-			salvarListaUsuariosNoCache('usuarios', listaDeUsuarios)
-		}
-
 		return true
 	}
 
